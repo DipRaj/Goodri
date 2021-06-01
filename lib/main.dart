@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gudri/screens/home_screen/home_screen.dart';
+import 'package:gudri/screens/my_orders_screen/my_orders_screen.dart';
+import 'package:gudri/screens/product_details_screen/product_details_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,13 +10,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      initialRoute: HomeScreen.id,
+          // primarySwatch: custom,
+          ),
+      initialRoute: MyOrdersScreen.id,
       routes: {
-        HomeScreen.id: (context) => HomeScreen(),
+        ProductDetailsScreen.id: (context) => ProductDetailsScreen(),
+        MyOrdersScreen.id: (context) => MyOrdersScreen(),
       },
     );
   }
