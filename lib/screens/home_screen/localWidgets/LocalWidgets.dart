@@ -171,38 +171,48 @@ class CategoryCard extends StatefulWidget {
 class _CategoryCardState extends State<CategoryCard> {
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      physics: NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-      itemCount: categoryList.length,
-      itemBuilder: (context, index) {
-        return Container(
-          width: 120,
-          decoration: BoxDecoration(
-              border: Border.all(
-                color: Color(0xffFD5606),
-                width: 2.5,
-              ),
-              borderRadius: BorderRadius.all(Radius.circular(8))),
-          child: Column(
-            children: [
-              Image(image: AssetImage('${categoryList[index].image}')),
-              Container(
-                  height: 40,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
+    return GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+        ),
+        physics: NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        itemCount: categoryList.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Container(
+              width: 120,
+              decoration: BoxDecoration(
+                  border: Border.all(
                     color: Color(0xffFD5606),
-                    // borderRadius: BorderRadius.all(Radius.circular(8)),
+                    width: 2.5,
                   ),
-                  child: Text('${categoryList[index].title}'.toUpperCase(),
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white)))
-            ],
-          ),
-        );
-      },
-    );
+                  borderRadius: BorderRadius.all(Radius.circular(8))),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image(
+                    image: AssetImage('${categoryList[index].image}'),
+                    height: 60,
+                  ),
+                  Container(
+                      height: 40,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Color(0xffFD5606),
+                        // borderRadius: BorderRadius.all(Radius.circular(8)),
+                      ),
+                      child: Center(
+                        child: Text(
+                            '${categoryList[index].title}'.toUpperCase(),
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.white)),
+                      ))
+                ],
+              ));
+        });
   }
 }

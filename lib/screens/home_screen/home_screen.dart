@@ -225,126 +225,148 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Container(
       child: Column(
         children: [
-          Container(
-            decoration: BoxDecoration(color: Color(0xff00008b)),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 2),
-              child: Row(
+          SearchBar(),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
                 children: [
-                  Expanded(
-                    flex: 2,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        height: 34,
-                        child: Center(child: Text("Categories")),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.all(Radius.circular(4))),
-                      ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    child: Row(
+                      children: [
+                        Icon(Icons.lock_clock),
+                        SizedBox(
+                          width: 16,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("We are accepting orders now!",
+                                style: TextStyle(fontWeight: FontWeight.w500)),
+                            Text("Earliest delivery by tomorrow 9 AM",
+                                style: TextStyle(fontWeight: FontWeight.w500))
+                          ],
+                        )
+                      ],
                     ),
                   ),
-                  Expanded(
-                    flex: 4,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        height: 34,
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Icon(
-                              Icons.search,
-                              color: Color(0xffEDEDED),
-                            ),
-                            SizedBox(
-                              width: 6,
-                            ),
-                            Text(
-                              "Search for Products",
-                              style: TextStyle(
-                                  color: Color(0xff777777), letterSpacing: 1),
-                            )
-                          ],
+
+                  // for best savers 👇👇
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SectionTitle(
+                          title: "Best Savers",
                         ),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(4)),
-                        ),
-                      ),
+                        SectionEndTitle(endTitle: "See All")
+                      ],
                     ),
-                  )
+                  ),
+                  Container(
+                    height: 400,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [Product(), Product(), Product(), Product()],
+                    ),
+                  ),
+
+                  //for category title 👇👇👇
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SectionTitle(
+                          title: "Shop by Category",
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  // Category Card 👇👇
+                  Container(
+                      margin:
+                          EdgeInsets.symmetric(horizontal: 12, vertical: 20),
+                      width: 600,
+                      height: 250,
+                      child: CategoryCard())
                 ],
               ),
             ),
-          ),
-
-          // We are accepting widget
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-            child: Row(
-              children: [
-                Icon(Icons.lock_clock),
-                SizedBox(
-                  width: 16,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("We are accepting orders now!",
-                        style: TextStyle(fontWeight: FontWeight.w500)),
-                    Text("Earliest delivery by tomorrow 9 AM",
-                        style: TextStyle(fontWeight: FontWeight.w500))
-                  ],
-                )
-              ],
-            ),
-          ),
-
-          // for best savers 👇👇
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SectionTitle(
-                  title: "Best Savers",
-                ),
-                SectionEndTitle(endTitle: "See All")
-              ],
-            ),
-          ),
-          Container(
-            height: 400,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [Product(), Product(), Product(), Product()],
-            ),
-          ),
-
-          //for category title 👇👇👇
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SectionTitle(
-                  title: "Shop by Category",
-                ),
-              ],
-            ),
-          ),
-
-          // Category Card 👇👇
-          Container(child: CategoryCard())
+          )
         ],
+      ),
+    );
+  }
+}
+
+class SearchBar extends StatelessWidget {
+  const SearchBar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(color: Color(0xff00008b)),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 2),
+        child: Row(
+          children: [
+            Expanded(
+              flex: 2,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 34,
+                  child: Center(child: Text("Categories")),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(4))),
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 4,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 34,
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Icon(
+                        Icons.search,
+                        color: Color(0xffEDEDED),
+                      ),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text(
+                        "Search for Products",
+                        style: TextStyle(
+                            color: Color(0xff777777), letterSpacing: 1),
+                      )
+                    ],
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(4)),
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
