@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:gudri/screens/Cart/CartScreen.dart';
+import 'package:gudri/screens/CustomerSupport/CustomerSupportScreen.dart';
 import 'package:gudri/screens/home_screen/localWidgets/LocalWidgets.dart';
 
 class AppAndDrawer extends StatefulWidget {
@@ -38,9 +40,17 @@ class _AppAndDrawerState extends State<AppAndDrawer> {
               ),
             ),
             // For the cart
-            Icon(
-              FontAwesomeIcons.shoppingCart,
-              size: 20,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CartScreen()),
+                );
+              },
+              child: Icon(
+                FontAwesomeIcons.shoppingCart,
+                size: 20,
+              ),
             )
           ],
         )),
@@ -171,12 +181,12 @@ class _AppAndDrawerState extends State<AppAndDrawer> {
             ),
             ListTile(
               leading: Icon(Icons.settings),
-              title: Text('Customer Helpline'),
+              title: Text('Customer Support'),
               onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CustomerSupport()),
+                );
               },
             ),
             ListTile(
@@ -294,8 +304,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   Container(
                       margin:
                           EdgeInsets.symmetric(horizontal: 12, vertical: 20),
-                      width: 600,
-                      height: 250,
+                      // width: 600,
+                      // height: 250,
                       child: CategoryCard())
                 ],
               ),

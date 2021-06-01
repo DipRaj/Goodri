@@ -94,10 +94,11 @@ class _ProductState extends State<Product> {
           Text(
             "Soyabean Soyabean Soyabean Soyabean Soyabean",
             style: TextStyle(
-                fontSize: 19,
-                fontFamily: "Cabin",
-                fontWeight: FontWeight.w600,
-                color: Color(0xffA9A9A9)),
+              fontSize: 17,
+              fontFamily: "Cabin",
+              fontWeight: FontWeight.w500,
+              color: Color(0xffA9A9A9),
+            ),
           ),
           Text(
             "1 L",
@@ -182,7 +183,8 @@ class _CategoryCardState extends State<CategoryCard> {
         itemCount: categoryList.length,
         itemBuilder: (BuildContext context, int index) {
           return Container(
-              width: 120,
+              // width: 90,
+              // height: 200,
               decoration: BoxDecoration(
                   border: Border.all(
                     color: Color(0xffFD5606),
