@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gudri/models/ProductModel.dart';
 import 'package:gudri/models/SubCategoryModel.dart';
 import 'package:gudri/models/categoryModel.dart';
+import 'package:gudri/screens/Category/CategoryParticular.dart';
 
 // section title👇👇
 class SectionTitle extends StatefulWidget {
@@ -83,7 +85,7 @@ class _ProductState extends State<Product> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image(image: AssetImage("assets/images/logo.png")),
+          Image(image: AssetImage("assets/images/product.png")),
           Text(
             "₹161",
             style: TextStyle(
@@ -158,137 +160,887 @@ class _ProductState extends State<Product> {
 // category 👇👇
 final List<CategoryModel> categoryList = [
   CategoryModel(
-      image: "assets/images/logo.png",
-      title: "Grocery & Staples",
-      subCategoriesdesc: "sub categories description",
-      subCategories: [
-        SubCategoryModel(
+    image: "assets/images/logo.png",
+    title: "Grocery & Staples",
+    subCategoriesdesc: "sub categories description",
+    subCategories: [
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
+          title: "Grocery & Staples 1",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
+          title: "Grocery & Staples 2",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
+          title: "Grocery & Staples 3",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        )
-      ]),
+          title: "Grocery & Staples 4",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/logo.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ])
+    ],
+  ),
   CategoryModel(
-      image: "assets/images/logo.png",
-      title: "Kitchening & Dining",
-      subCategoriesdesc: "sub categories description",
-      subCategories: [
-        SubCategoryModel(
-          image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
-          image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
-          image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
-          image: "assets/images/logo.png",
-          title: "Subcategory1",
-        )
-      ]),
+    image: "assets/images/shop.png",
+    title: "Kitchening & Dining",
+    subCategoriesdesc: "sub categories description",
+    subCategories: [
+      SubCategoryModel(
+          image: "assets/images/shop.png",
+          title: "Kitchening & Dining 1",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
+          image: "assets/images/shop.png",
+          title: "Kitchening & Dining 2",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
+          image: "assets/images/shop.png",
+          title: "Kitchening & Dining 3",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
+          image: "assets/images/shop.png",
+          title: "Kitchening & Dining 4",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ])
+    ],
+  ),
   CategoryModel(
-      image: "assets/images/logo.png",
-      title: "Household Items",
-      subCategoriesdesc: "sub categories description",
-      subCategories: [
-        SubCategoryModel(
+    image: "assets/images/logo.png",
+    title: "Household Items",
+    subCategoriesdesc: "sub categories description",
+    subCategories: [
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
+          title: "Household Items 1",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
+          title: "Household Items 2",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
+          title: "Household Items 3",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        )
-      ]),
+          title: "Household Items 4",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ])
+    ],
+  ),
   CategoryModel(
-      image: "assets/images/logo.png",
-      title: "Personal Care",
-      subCategoriesdesc: "sub categories description",
-      subCategories: [
-        SubCategoryModel(
+    image: "assets/images/logo.png",
+    title: "Personal Care",
+    subCategoriesdesc: "sub categories description",
+    subCategories: [
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
+          title: "Personal Care 1",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
+          title: "Personal Care 2",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
+          title: "Personal Care 3",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        )
-      ]),
+          title: "Personal Care 4",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ])
+    ],
+  ),
   CategoryModel(
-      image: "assets/images/logo.png",
-      title: "Fruits & Vegetables",
-      subCategoriesdesc: "sub categories description",
-      subCategories: [
-        SubCategoryModel(
+    image: "assets/images/logo.png",
+    title: "Fruits & Vegetables",
+    subCategoriesdesc: "sub categories description",
+    subCategories: [
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
+          title: "Fruits & Vegetables 1",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
+          title: "Fruits & Vegetables 2",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
+          title: "Fruits & Vegetables 3",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        )
-      ]),
+          title: "Fruits & Vegetables 4",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ])
+    ],
+  ),
   CategoryModel(
-      image: "assets/images/logo.png",
-      title: "Bevarages",
-      subCategoriesdesc: "sub categories description",
-      subCategories: [
-        SubCategoryModel(
+    image: "assets/images/logo.png",
+    title: "Bevarages",
+    subCategoriesdesc: "sub categories description",
+    subCategories: [
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
+          title: "Bevarages 1",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
+          title: "Bevarages 2",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        ),
-        SubCategoryModel(
+          title: "Bevarages 3",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ]),
+      SubCategoryModel(
           image: "assets/images/logo.png",
-          title: "Subcategory1",
-        )
-      ]),
+          title: "Bevarages 4",
+          products: [
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+            ProductModel(
+                image: "assets/images/shop.png",
+                name: "Product1",
+                price: 344,
+                quantity: 2,
+                amount: 1),
+          ])
+    ],
+  ),
 ];
 
 class CategoryCard extends StatefulWidget {
@@ -301,47 +1053,57 @@ class _CategoryCardState extends State<CategoryCard> {
   Widget build(BuildContext context) {
     return GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-        ),
+            crossAxisCount: 3,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            childAspectRatio: 0.7),
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemCount: categoryList.length,
         itemBuilder: (BuildContext context, int index) {
-          return Container(
-              // width: 90,
-              // height: 200,
-              decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Color(0xffFD5606),
-                    width: 2.5,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(8))),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Image(
-                    image: AssetImage('${categoryList[index].image}'),
-                    height: 60,
-                  ),
-                  Container(
-                      height: 40,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Color(0xffFD5606),
-                        // borderRadius: BorderRadius.all(Radius.circular(8)),
-                      ),
-                      child: Center(
-                        child: Text(
-                            '${categoryList[index].title}'.toUpperCase(),
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w800,
-                                color: Colors.white)),
-                      ))
-                ],
-              ));
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ParticularCategoryScreen(
+                          theSubCategories: categoryList[index].subCategories,
+                        )),
+              );
+            },
+            child: Container(
+                // width: 90,
+                // height: 200,
+                decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Color(0xff044a05),
+                      width: 2.5,
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(8))),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image(
+                      image: AssetImage('${categoryList[index].image}'),
+                      height: 120,
+                    ),
+                    Container(
+                        height: 40,
+                        width: double.infinity,
+                        decoration: BoxDecoration(color: Color(0xff044a05)
+                            // borderRadius: BorderRadius.all(Radius.circular(8)),
+                            ),
+                        child: Center(
+                          child: Text(
+                              '${categoryList[index].title}'.toUpperCase(),
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w800,
+                                  color: Colors.white)),
+                        ))
+                  ],
+                )),
+          );
         });
   }
 }

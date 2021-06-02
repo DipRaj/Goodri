@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:gudri/models/ProductModel.dart';
 import 'package:gudri/models/SubCategoryModel.dart';
 import 'package:gudri/screens/home_screen/localWidgets/LocalWidgets.dart';
 
@@ -195,5 +196,160 @@ class _SubCategoriesSectionState extends State<SubCategoriesSection> {
             return Text("su");
           }),
     );
+  }
+}
+
+// category particular product 👇👇
+class CategoryParticularProduct extends StatefulWidget {
+  final List<ProductModel> theProducts;
+  CategoryParticularProduct({required this.theProducts});
+  @override
+  _CategoryParticularProductState createState() =>
+      _CategoryParticularProductState();
+}
+
+class _CategoryParticularProductState extends State<CategoryParticularProduct> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: 8,
+          vertical: 16,
+        ),
+        decoration: BoxDecoration(
+            color: Color(0xffECECEC),
+            borderRadius: BorderRadius.all(Radius.circular(4))),
+        child: ListView.builder(
+          // physics: NeverScrollableScrollPhysics(),
+          // shrinkWrap: true,
+          itemCount: widget.theProducts.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+              padding: EdgeInsets.only(top: 12, left: 12, right: 12, bottom: 0),
+              margin: EdgeInsets.only(bottom: 8),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(8)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 3,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              height: 150,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Image(
+                      image: AssetImage('${widget.theProducts[index].image}'),
+                      height: 100,
+                    ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '₹' + '${widget.theProducts[index].price.toString()}',
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontFamily: "Cabin",
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                        Text(
+                          '${widget.theProducts[index].name}',
+                          style: TextStyle(
+                              fontSize: 17,
+                              fontFamily: "Cabin",
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xffA9A9A9)),
+                        ),
+                        SizedBox(
+                          height: 45,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              flex: 3,
+                              child: Text(
+                                '9 L',
+                                style: TextStyle(
+                                    fontSize: 19,
+                                    fontFamily: "Cabin",
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xffA9A9A9)),
+                              ),
+                            ),
+                            Expanded(
+                              flex: 3,
+                              child: Container(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      flex: 3,
+                                      child: Container(
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xffE96125),
+                                          borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(4),
+                                            bottomLeft: Radius.circular(4),
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            "ADD",
+                                            style: TextStyle(
+                                                fontSize: 19,
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w600,
+                                                fontFamily: "Cabin"),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: Color(0xffC0511D),
+                                          borderRadius: BorderRadius.only(
+                                            topRight: Radius.circular(4),
+                                            bottomRight: Radius.circular(4),
+                                          ),
+                                        ),
+                                        height: 30,
+                                        child: Icon(
+                                          Icons.add,
+                                          size: 20,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    color: Colors.black,
+                  )
+                ],
+              ),
+            );
+          },
+        ));
   }
 }
