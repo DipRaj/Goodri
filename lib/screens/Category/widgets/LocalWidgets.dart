@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gudri/models/ProductModel.dart';
 import 'package:gudri/models/SubCategoryModel.dart';
+import 'package:gudri/screens/Category/CategoryParticular.dart';
 import 'package:gudri/screens/home_screen/localWidgets/LocalWidgets.dart';
 
 // For category section 👇👇
@@ -142,25 +143,37 @@ class _CategoryCard2State extends State<CategoryCard2> {
                   shrinkWrap: true,
                   itemCount: widget.subCategories.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Color(0xffE9E9E9))),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Image(
-                            image: AssetImage(
-                                '${widget.subCategories[index].image}'),
-                            height: 80,
-                          ),
-                          Text(
-                            '${widget.subCategories[index].title}',
-                            style: TextStyle(
-                                fontFamily: "Cabin",
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500),
-                          )
-                        ],
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ParticularCategoryScreen(
+                                    theSubCategories: widget.subCategories,
+                                  )),
+                        );
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Color(0xffE9E9E9))),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image(
+                              image: AssetImage(
+                                  '${widget.subCategories[index].image}'),
+                              height: 80,
+                            ),
+                            Text(
+                              '${widget.subCategories[index].title}',
+                              style: TextStyle(
+                                  fontFamily: "Cabin",
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500),
+                            )
+                          ],
+                        ),
                       ),
                     );
                   }),
@@ -168,33 +181,6 @@ class _CategoryCard2State extends State<CategoryCard2> {
           )
         ],
       ),
-    );
-  }
-}
-
-// for sub category 👇👇👇
-class SubCategoriesSection extends StatefulWidget {
-  // final
-  @override
-  _SubCategoriesSectionState createState() => _SubCategoriesSectionState();
-}
-
-class _SubCategoriesSectionState extends State<SubCategoriesSection> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-          ),
-          physics: NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          itemCount: 2,
-          itemBuilder: (BuildContext context, int index) {
-            return Text("su");
-          }),
     );
   }
 }
