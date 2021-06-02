@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gudri/screens/my_notifications_screen/my_notification_screen.dart';
 import 'package:gudri/screens/my_orders_screen/my_orders_screen.dart';
 import 'package:gudri/screens/product_details_screen/product_details_screen.dart';
 
@@ -15,10 +16,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           // primarySwatch: custom,
           ),
-      initialRoute: MyOrdersScreen.id,
+      // initialRoute: MyOrdersScreen.id,
+      // initialRoute: ProductDetailsScreen.id,
+      initialRoute: MyNotificationsScreen.id,
       routes: {
         ProductDetailsScreen.id: (context) => ProductDetailsScreen(),
         MyOrdersScreen.id: (context) => MyOrdersScreen(),
+        MyNotificationsScreen.id: (context) => MyNotificationsScreen()
       },
     );
   }
