@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gudri/models/SubCategoryModel.dart';
 import 'package:gudri/models/categoryModel.dart';
 
 // section title👇👇
@@ -156,12 +157,138 @@ class _ProductState extends State<Product> {
 
 // category 👇👇
 final List<CategoryModel> categoryList = [
-  CategoryModel(image: "assets/images/logo.png", title: "Grocery & Staples"),
-  CategoryModel(image: "assets/images/logo.png", title: "Kitchening & Dining"),
-  CategoryModel(image: "assets/images/logo.png", title: "Household Items"),
-  CategoryModel(image: "assets/images/logo.png", title: "Personal Care"),
-  CategoryModel(image: "assets/images/logo.png", title: "Fruits & Vegetables"),
-  CategoryModel(image: "assets/images/logo.png", title: "Bevarages"),
+  CategoryModel(
+      image: "assets/images/logo.png",
+      title: "Grocery & Staples",
+      subCategoriesdesc: "sub categories description",
+      subCategories: [
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        )
+      ]),
+  CategoryModel(
+      image: "assets/images/logo.png",
+      title: "Kitchening & Dining",
+      subCategoriesdesc: "sub categories description",
+      subCategories: [
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        )
+      ]),
+  CategoryModel(
+      image: "assets/images/logo.png",
+      title: "Household Items",
+      subCategoriesdesc: "sub categories description",
+      subCategories: [
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        )
+      ]),
+  CategoryModel(
+      image: "assets/images/logo.png",
+      title: "Personal Care",
+      subCategoriesdesc: "sub categories description",
+      subCategories: [
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        )
+      ]),
+  CategoryModel(
+      image: "assets/images/logo.png",
+      title: "Fruits & Vegetables",
+      subCategoriesdesc: "sub categories description",
+      subCategories: [
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        )
+      ]),
+  CategoryModel(
+      image: "assets/images/logo.png",
+      title: "Bevarages",
+      subCategoriesdesc: "sub categories description",
+      subCategories: [
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        ),
+        SubCategoryModel(
+          image: "assets/images/logo.png",
+          title: "Subcategory1",
+        )
+      ]),
 ];
 
 class CategoryCard extends StatefulWidget {

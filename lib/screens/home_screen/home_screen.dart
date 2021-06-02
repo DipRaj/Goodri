@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gudri/screens/Cart/CartScreen.dart';
+import 'package:gudri/screens/Category/CategoryScreen.dart';
 import 'package:gudri/screens/CustomerSupport/CustomerSupportScreen.dart';
 import 'package:gudri/screens/home_screen/localWidgets/LocalWidgets.dart';
 
@@ -332,14 +333,22 @@ class SearchBar extends StatelessWidget {
           children: [
             Expanded(
               flex: 2,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 34,
-                  child: Center(child: Text("Categories")),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(4))),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CategoryScreen()),
+                  );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    height: 34,
+                    child: Center(child: Text("Categories")),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(Radius.circular(4))),
+                  ),
                 ),
               ),
             ),
