@@ -85,7 +85,9 @@ class _ProductState extends State<Product> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image(image: AssetImage("assets/images/product.png")),
+          Image(
+            image: AssetImage("assets/images/nycil.png"),
+          ),
           Text(
             "₹161",
             style: TextStyle(

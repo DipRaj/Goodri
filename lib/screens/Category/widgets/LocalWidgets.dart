@@ -138,7 +138,9 @@ class _CategoryCard2State extends State<CategoryCard2> {
               ),
               child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3, childAspectRatio: 0.7),
+                    crossAxisCount: 3,
+                    childAspectRatio: 0.7,
+                  ),
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: widget.subCategories.length,

@@ -1,11 +1,11 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gudri/screens/Cart/CartScreen.dart';
 import 'package:gudri/screens/Category/CategoryScreen.dart';
 import 'package:gudri/screens/CustomerSupport/CustomerSupportScreen.dart';
 import 'package:gudri/screens/home_screen/localWidgets/LocalWidgets.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'dart:core';
 
 class AppAndDrawer extends StatefulWidget {
   static const String id = 'AppAndDrawer';
@@ -15,6 +15,231 @@ class AppAndDrawer extends StatefulWidget {
 }
 
 class _AppAndDrawerState extends State<AppAndDrawer> {
+  static Uri params = Uri(
+    scheme: 'mailto',
+    path: 'Goodri928@gmail.com',
+    query:
+        'subject=Customer [Feedback]&body=Add your feedback here', //add subject and body here
+  );
+
+  var url = params.toString();
+  void sendEmail() async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  // first rate us screen 👇👇
+  Future<void> firstRateUsScreen() async {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+        insetPadding: EdgeInsets.zero,
+        contentPadding: EdgeInsets.zero,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        title: const Text('Rate Us'),
+        content: Builder(builder: (context) {
+          return Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            height: 250,
+            width: 350,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 15),
+                  child: Text(
+                    "How do you like our goodri app?",
+                    style: TextStyle(
+                        fontFamily: "Cabin", fontSize: 16, color: Colors.black),
+                  ),
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                          secondRateUsScreen();
+                        },
+                        child: Container(
+                            height: 160,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(4),
+                                ),
+                                border:
+                                    Border.all(color: Colors.grey.shade300)),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Image(
+                                  image: AssetImage("assets/images/logo.png"),
+                                  height: 100,
+                                ),
+                                Text(
+                                  "Meh!",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontFamily: "Cabin",
+                                      fontWeight: FontWeight.w500),
+                                )
+                              ],
+                            )),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                          thirdRateUsScreen();
+                        },
+                        child: Container(
+                            height: 160,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(4),
+                                ),
+                                border:
+                                    Border.all(color: Colors.grey.shade300)),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Image(
+                                  image: AssetImage("assets/images/logo.png"),
+                                  height: 100,
+                                ),
+                                Text("Loved it!")
+                              ],
+                            )),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          );
+        }),
+      ),
+    );
+  }
+
+  // second rate us screen (Meh!) 👇👇
+  Future<void> secondRateUsScreen() async {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+        insetPadding: EdgeInsets.zero,
+        contentPadding: EdgeInsets.zero,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        title: const Text('Help us do better'),
+        content: Builder(builder: (context) {
+          return Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            height: 250,
+            width: 350,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  "Mind giving us a quick feedback",
+                  style: TextStyle(
+                      fontFamily: "Cabin", fontSize: 16, color: Colors.black),
+                ),
+                Image(
+                  image: AssetImage("assets/images/logo.png"),
+                  height: 100,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text("Nope",
+                            style: TextStyle(color: Colors.grey.shade700))),
+                    SizedBox(width: 50),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+
+                        sendEmail();
+                      },
+                      child: Text(
+                        "Yeah, Sure",
+                        style: TextStyle(
+                            color: Color(0xffB8795B), fontFamily: "Cabin"),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          );
+        }),
+      ),
+    );
+  }
+
+  // third rate us screen (Loved it!) 👇👇
+  Future<void> thirdRateUsScreen() async {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+        insetPadding: EdgeInsets.zero,
+        contentPadding: EdgeInsets.zero,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        title: const Text('Rate App'),
+        content: Builder(builder: (context) {
+          return Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            height: 250,
+            width: 350,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  "Mind giving us five start on Google Play?",
+                  style: TextStyle(
+                      fontFamily: "Cabin", fontSize: 16, color: Colors.black),
+                ),
+                Image(
+                  image: AssetImage("assets/images/logo.png"),
+                  height: 100,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text("Nope",
+                            style: TextStyle(color: Colors.grey.shade700))),
+                    SizedBox(width: 50),
+                    Text(
+                      "Yeah, Sure",
+                      style: TextStyle(
+                          color: Color(0xffB8795B), fontFamily: "Cabin"),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          );
+        }),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -191,15 +416,12 @@ class _AppAndDrawerState extends State<AppAndDrawer> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.star),
-              title: Text('Rate us'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
+                leading: Icon(Icons.star),
+                title: Text('Rate us'),
+                onTap: () {
+                  Navigator.pop(context);
+                  firstRateUsScreen();
+                }),
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('About Us'),
@@ -280,7 +502,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Container(
-                    height: 400,
+                    height: 380,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [Product(), Product(), Product(), Product()],
