@@ -74,29 +74,12 @@ class _ProductDetailsScreenMobileState
       length: 2,
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Color(0xff00008b),
-          leading: IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.arrow_back),
-          ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.search),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.shopping_cart),
-            ),
-          ],
-        ),
+        appBar: buildAppBar(),
         body: SingleChildScrollView(
           child: Column(
             children: [
-              // product image
               Container(
-                height: size.height * 0.4,
+                // height: size.height * 0.4,
                 width: size.width,
                 child: CarouselSlider(
                     items: imageList.map((imgUrl) {
@@ -216,10 +199,30 @@ class _ProductDetailsScreenMobileState
     );
   }
 
+  AppBar buildAppBar() {
+    return AppBar(
+      backgroundColor: Color(0xff00008b),
+      leading: IconButton(
+        onPressed: () {},
+        icon: Icon(Icons.arrow_back),
+      ),
+      actions: [
+        IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.search),
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.shopping_cart),
+        ),
+      ],
+    );
+  }
+
   Container buildTabBarView() {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10.0),
-      height: 500,
+      height: 300,
       child: TabBarView(
         children: [
           ListView(
@@ -247,17 +250,20 @@ class _ProductDetailsScreenMobileState
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(title),
-                IconButton(
-                  onPressed: onPressed,
-                  icon: Icon(icon),
-                )
-                // Icon(Icons.arrow_drop_down),
-              ],
+          child: GestureDetector(
+            onTap: () {
+              onPressed();
+            },
+            child: Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(title),
+                  Icon(
+                    icon,
+                  ),
+                ],
+              ),
             ),
           ),
         ),

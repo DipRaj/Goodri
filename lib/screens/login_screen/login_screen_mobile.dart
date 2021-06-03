@@ -54,31 +54,35 @@ class _LoginScreenMobileState extends State<LoginScreenMobile> {
                 ],
               ),
             ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-              height: 35,
-              width: size.width,
-              color: Color(0xff0077CC),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.phone,
-                    ),
-                  ),
-                  Text(
-                    "One touch login with Truecaller",
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            buildLoginWithTrueCallerButton(size),
           ],
         ),
+      ),
+    );
+  }
+
+  Container buildLoginWithTrueCallerButton(Size size) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+      height: 35,
+      width: size.width,
+      color: Color(0xff0077CC),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CircleAvatar(
+            backgroundColor: Colors.white,
+            child: Icon(
+              Icons.phone,
+            ),
+          ),
+          Text(
+            "One touch login with Truecaller",
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -106,7 +110,6 @@ class _LoginScreenMobileState extends State<LoginScreenMobile> {
         color: Colors.white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10.0),
@@ -120,65 +123,73 @@ class _LoginScreenMobileState extends State<LoginScreenMobile> {
                 ),
               ),
             ),
-            Container(
-              height: 30,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: size.width * 0.1,
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(
-                          width: 1.0,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: "+977",
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20.0,
-                  ),
-                  Container(
-                    width: size.width * 0.5,
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(
-                          width: 1.0,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: "Phone Number",
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 35,
-              color: Color(0xffF06833),
-              child: Center(
-                child: Text(
-                  "Next",
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
+            buildPhoneField(size),
+            buildNextButton(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container buildNextButton() {
+    return Container(
+      height: 35,
+      color: Color(0xffF06833),
+      child: Center(
+        child: Text(
+          "Next",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Container buildPhoneField(Size size) {
+    return Container(
+      height: 30,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: size.width * 0.1,
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(
+                  width: 1.0,
+                  color: Colors.grey,
                 ),
               ),
             ),
-          ],
-        ),
+            child: TextFormField(
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: "+977",
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 20.0,
+          ),
+          Container(
+            width: size.width * 0.5,
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(
+                  width: 1.0,
+                  color: Colors.grey,
+                ),
+              ),
+            ),
+            child: TextFormField(
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: "Phone Number",
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
