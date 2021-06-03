@@ -208,7 +208,7 @@ class _AppAndDrawerState extends State<AppAndDrawer> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
-                  "Mind giving us five start on Google Play?",
+                  "Mind giving us five star on Google Play?",
                   style: TextStyle(
                       fontFamily: "Cabin", fontSize: 16, color: Colors.black),
                 ),
@@ -370,10 +370,10 @@ class _AppAndDrawerState extends State<AppAndDrawer> {
                     child: Text("1", style: TextStyle(color: Colors.white))),
               ),
               onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CartScreen()),
+                );
               },
             ),
             ListTile(
@@ -424,7 +424,7 @@ class _AppAndDrawerState extends State<AppAndDrawer> {
                   firstRateUsScreen();
                 }),
             ListTile(
-              leading: Icon(Icons.settings),
+              leading: Icon(FontAwesomeIcons.houseUser),
               title: Text('About Us'),
               onTap: () {
                 // Update the state of the app
@@ -434,7 +434,7 @@ class _AppAndDrawerState extends State<AppAndDrawer> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.settings),
+              leading: Icon(FontAwesomeIcons.mobile),
               title: Text('About this release'),
               trailing: Text("V.1.0", style: TextStyle(color: Colors.grey)),
               onTap: () {
