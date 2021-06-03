@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:gudri/models/ProductModel.dart';
 import 'package:gudri/models/SubCategoryModel.dart';
 import 'package:gudri/screens/Category/widgets/LocalWidgets.dart';
 import 'package:gudri/widgets/GlobalAppBar.dart';

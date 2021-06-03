@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:gudri/screens/Address/Address.dart';
 import 'package:gudri/screens/Cart/CartScreen.dart';
 import 'package:gudri/screens/Category/CategoryScreen.dart';
 import 'package:gudri/screens/CustomerSupport/CustomerSupportScreen.dart';
@@ -321,10 +322,10 @@ class _AppAndDrawerState extends State<AppAndDrawer> {
               title: Text('Ward-5 Duhabi'),
               trailing: Icon(Icons.edit),
               onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AddressScreen()),
+                );
               },
             ),
             ListTile(

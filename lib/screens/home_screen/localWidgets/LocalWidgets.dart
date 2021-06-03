@@ -102,7 +102,7 @@ class _ProductState extends State<Product> {
               fontSize: 17,
               fontFamily: "Cabin",
               fontWeight: FontWeight.w500,
-              color: Color(0xffA9A9A9),
+              color: Color(0xff415764),
             ),
           ),
           Text(

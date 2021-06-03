@@ -48,6 +48,7 @@ flutter:
     - shop.png
     - product.png
     - nycil.png
+    - launch_image.jpg
   fonts:
     - family: Cabin
       fonts:
